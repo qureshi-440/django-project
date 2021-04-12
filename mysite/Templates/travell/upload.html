@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations Upload</title>
+</head>
+<body>
+    {% if uploaded %}
+        <h1>Thank You for uploading ,Your Destinations will appear on the site in few minutes</h1>
+    {% else %}
+        <h1>Upload Your Destinations</h1>
+        
+        <form enctype="multipart/form-data" method="POST" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Upload">
+    </form>
+    {% endif %}
+</body>
+</html>
